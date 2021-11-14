@@ -78,11 +78,12 @@ const styles = theme => ({
 const infos = [
   {
     icon: <PhoneIcon />,
-    description: "+1 555 123456"
+    description: "+1 224 607 9132",
+    infoLink: "tel:2246079132"
   },
   {
     icon: <MailIcon />,
-    description: "support@company.com"
+    description: "anmaygupta1@gmail.com"
   }
 ];
 
@@ -101,7 +102,7 @@ const socialIcons = [
       </svg>
     ),
     label: "Github",
-    href: "https://github.com/dunky11/react-saas-template"
+    href: "https://github.com/anmayg"
   },
   {
     icon: (
@@ -171,7 +172,7 @@ function Footer(props) {
                   <TextField
                     variant="outlined"
                     multiline
-                    placeholder="Get in touch with us"
+                    placeholder="Get in touch with me!"
                     inputProps={{ "aria-label": "Get in Touch" }}
                     InputProps={{
                       className: classes.whiteBg
@@ -185,6 +186,9 @@ function Footer(props) {
                   color={theme.palette.common.white}
                   variant="outlined"
                   type="submit"
+                  onClick={() => {
+                    window.open('mailto:anmaygupta1@gmail.com')
+                  }}
                 >
                   Send Message
                 </ColoredButton>
@@ -196,12 +200,13 @@ function Footer(props) {
               <Box display="flex" justifyContent="center">
                 <div>
                   {infos.map((info, index) => (
-                    <Box display="flex" mb={1} key={index}>
+                    <Box display="flex" mb={1} key={index} >
                       <Box mr={2}>
                         <IconButton
                           className={classes.infoIcon}
                           tabIndex={-1}
                           disabled
+                          ref={classes.infoLink}
                         >
                           {info.icon}
                         </IconButton>
@@ -223,11 +228,10 @@ function Footer(props) {
           </Hidden>
           <Grid item xs={12} md={6} lg={4}>
             <Typography variant="h6" paragraph className="text-white">
-              About the Company
+              About Me
             </Typography>
             <Typography style={{ color: "#8f9296" }} paragraph>
-              Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-              euismod convallis velit, eu auctor lacus vehicula sit amet.
+              I'm a high schooler at James B. Conant High School, working on a bunch of stuff.
             </Typography>
             <Box display="flex">
               {socialIcons.map((socialIcon, index) => (
