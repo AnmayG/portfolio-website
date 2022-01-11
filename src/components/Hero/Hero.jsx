@@ -1,12 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
+import Typed from 'typed.js';
 import PortfolioContext from '../../context/context';
 
 const Header = () => {
   const { hero } = useContext(PortfolioContext);
-  const { title, name, subtitle, cta } = hero;
+  const { title, name, cta } = hero;
+  const el = useRef(null);
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -19,6 +21,33 @@ const Header = () => {
       setIsMobile(true);
       setIsDesktop(false);
     }
+
+    const typed = new Typed(el.current, {
+      strings: [
+        'Student',
+        'Developer',
+        'Roboticist',
+        'Programmer',
+        'Mentor',
+        'Debater',
+        'Hacker',
+        'Volunteer',
+        'Representative',
+      ], // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 300,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 1000,
+      smartBackspace: true,
+      loop: true,
+      showCursor: true,
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
   }, []);
 
   return (
@@ -29,7 +58,8 @@ const Header = () => {
             {title || 'Hi, my name is'}{' '}
             <span className="text-color-main">{name || 'Your Name'}</span>
             <br />
-            {subtitle || "I'm the Unknown Developer."}
+            {/* Element to display the typed.js stuff */}
+            <span ref={el} />
           </h1>
         </Fade>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
