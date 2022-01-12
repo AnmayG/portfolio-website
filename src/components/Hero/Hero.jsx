@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import Typed from 'typed.js';
 import PortfolioContext from '../../context/context';
+import GithubCorner from 'react-github-corner';
 
 const Header = () => {
   const { hero } = useContext(PortfolioContext);
@@ -44,7 +45,7 @@ const Header = () => {
       showCursor: true,
     });
 
-    // Destropying
+    // Destroying
     return () => {
       typed.destroy();
     };
@@ -52,6 +53,7 @@ const Header = () => {
 
   return (
     <section id="hero" className="jumbotron">
+      <GithubCorner href="https://github.com/AnmayG" direction="left"/>
       <Container>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
           <h1 className="hero-title">
