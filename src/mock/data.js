@@ -2,23 +2,24 @@ import { nanoid } from 'nanoid';
 
 // HEAD DATA
 export const headData = {
-  title: '', // e.g: 'Name | Developer'
-  lang: '', // e.g: en, es, fr, jp
-  description: '', // e.g: Welcome to my website
+  title: 'Anmay Gupta | Developer', // e.g: 'Name | Developer'
+  lang: 'en', // e.g: en, es, fr, jp
+  description: 'Welcome to my website', // e.g: Welcome to my website
 };
 
 // HERO DATA
 export const heroData = {
   title: "Hi! I'm ",
   name: 'Anmay Gupta.',
-  subtitle: 'High School Student',
+  subtitle: 'Student',
   cta: "Let's go on an adventure together",
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpeg',
-  paragraphOne: '',
+  paragraphOne: `this
+  is a multiline thing`,
   paragraphTwo: '',
   paragraphThree: '',
   resume: '', // if no resume, the button will not show up
